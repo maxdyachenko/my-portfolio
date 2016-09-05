@@ -1,0 +1,78 @@
+@import 'mixin';
+*{
+	margin:0;
+	padding: 0;
+}
+@font-face {
+    font-family: Baloo; /* Имя шрифта */
+    src: url(../fonts/BalooChettan-Regular.ttf); /* Путь к файлу со шрифтом */
+   }
+
+body, html {
+	height: 100%;
+	background:url(../img/bg.jpg) no-repeat,#c9edff;
+	background-attachment: fixed;
+	background-size: cover;
+	text-align:center;
+}
+a{
+	text-decoration: none;
+}
+.main-block{
+	position: absolute;
+	top: 50%;
+	left: 30%;
+ 	transform: translateY(-50%);
+	background: rgba(0,0,0,0.9);
+	border-radius: 15px;
+	width: 40%;
+	height: 80%;
+	margin: 0 auto;
+}
+header{
+	width: 100%;
+}
+
+.main-menu{
+	width: 70%;
+	margin:0 auto;
+	overflow: hidden;
+	
+	a{
+		box-sizing: border-box;
+		font-family: Baloo;
+		font-size: 24px;
+		color: white;
+		padding: 12px;
+		padding-top: 50px;
+		height: 90px;
+		border-bottom-right-radius: 6px;
+		border-bottom-left-radius: 6px;
+		display: inline-block;
+		transition:all 0.5s;
+		
+		&:hover{
+			height: 110px;
+			background: #0758b7;
+			@include animation('referenceHeight 0.4s linear');
+		}
+	}
+}
+.active{
+	background: #0758b7;
+	height: 100px !important;
+}
+@include keyframes(referenceHeight)
+{
+    0% {
+        height: 110px;
+        // you can also use mixins inside this mixin!
+    }
+
+    50% {
+        height: 120px;
+    }
+    100% {
+    	height: 110px;
+    }
+}
