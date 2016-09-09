@@ -20,7 +20,8 @@ body, html {
   text-align: center; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: unset; }
 
 #loader {
   position: absolute;
@@ -29,6 +30,7 @@ a {
   transform: translateY(-50%); }
 
 .main-block {
+  overflow: hidden;
   opacity: 0;
   max-width: 800px;
   background: rgba(0, 0, 0, 0.8);
@@ -43,7 +45,7 @@ header {
   width: 100%;
   margin: 0 auto;
   overflow: hidden; }
-  .main-menu a {
+  .main-menu .menu-item {
     box-sizing: border-box;
     font-family: Baloo;
     font-size: 24px;
@@ -54,8 +56,9 @@ header {
     border-bottom-left-radius: 6px;
     display: inline-block;
     margin-bottom: 70px; }
-    .main-menu a:hover {
+    .main-menu .menu-item:hover {
       height: 110px;
+      cursor: pointer;
       background: #0758b7;
       -webkit-animation: referenceHeight 0.4s ease-out;
       -moz-animation: referenceHeight 0.4s ease-out;
@@ -118,6 +121,25 @@ header {
       .icons-wrapper .center-icons .icon:hover {
         color: #0758b7;
         cursor: pointer; }
+
+#content {
+  position: relative; }
+
+#profile, #education, #skills, #experience {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 1s; }
+
+.active-content {
+  opacity: 1 !important;
+  visibility: visible !important; }
+
+.my-edu {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 30px; }
 
 @-webkit-keyframes referenceHeight {
   0% {
