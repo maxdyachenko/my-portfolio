@@ -36,7 +36,7 @@ a {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
   margin: 0 0;
-  transition: opacity 0.7s,margin 1s; }
+  transition: opacity 0.7s,margin 1s,height 1s; }
 
 header {
   width: 100%; }
@@ -125,11 +125,17 @@ header {
 #content {
   position: relative; }
 
-#profile, #education, #skills, #experience {
+#profile, #education, #skills {
   opacity: 0;
   visibility: hidden;
   position: absolute;
   transition: all 1s; }
+
+#education {
+  width: 100%; }
+
+#skills {
+  width: 100%; }
 
 .active-content {
   opacity: 1 !important;
@@ -140,6 +146,60 @@ header {
   margin: 0 auto;
   color: white;
   font-size: 30px; }
+
+.edu-description {
+  overflow: hidden;
+  text-align: left;
+  color: #f1f2f8;
+  width: 80%;
+  margin: 25px auto; }
+  .edu-description .edu-logo {
+    color: #7f8084;
+    float: left;
+    width: 20%; }
+  .edu-description .edu-text {
+    color: #f1f2f8;
+    font-size: 20px;
+    float: left;
+    width: 80%; }
+    .edu-description .edu-text .edu-year {
+      color: #afb2b7;
+      font-weight: bold;
+      font-size: 24px; }
+
+.item-wrapper {
+  overflow: hidden;
+  margin-top: 25px; }
+
+.content-skills {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  /*{
+  	margin: 20px;
+  	
+  	color: white;
+  	font-size: 40px;
+  	width: 200px;
+  	height: 200px;
+  	border-radius: 200px;
+  	text-align: center;
+  	line-height: 180px;
+  	border:10px solid green;
+  	transition: all 1s;
+  }*/ }
+
+.skills {
+  height: 200px;
+  margin-bottom: 20px !important; }
+  .skills svg {
+    height: 100%;
+    display: block; }
+  .skills .progressbar-text {
+    color: yellow !important;
+    font-size: 25px; }
 
 @-webkit-keyframes referenceHeight {
   0% {
